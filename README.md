@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Churn Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Churn Viewer is a React-based web application designed to visualize and analyze client churn prediction data. It presents churn scores and binary predictions in a sortable, searchable, and interactive table, helping users identify clients at risk and take action.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This application loads churn prediction results from a CSV file and displays them in a user-friendly interface. It supports filtering, client flagging, and basic visualizations to provide a deeper understanding of client behavior and churn risk.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Load and parse churn predictions from a CSV file
+- Tabbed interface with:
+  - All clients
+  - Top 100 churn-risk clients
+  - Flagged clients (user-selected)
+- Sort and search clients by ID or score
+- Flag/unflag clients with session-based persistence
+- Display churn probabilities using gauges and bar charts
+- Modal pop-up for detailed client view
+- Responsive layout and modular component design
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+.
+├── public/
+│ └── data/
+│ └── churn_predictions.csv # Churn results file
+├── src/
+│ ├── components/
+│ │ ├── ChurnGauge.jsx # Churn score visualization
+│ │ ├── ClientBarChart.jsx # Horizontal score chart
+│ │ ├── ClientDetailsModal.jsx # Modal for client info
+│ │ └── ClientTable.jsx # Main table logic
+│ ├── App.js # Main app logic
+│ └── ...
+├── package.json
+└── README.md
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Running Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v18 or higher)
+- npm or yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Steps
 
-### `npm run eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/devkorki/churn-viewer.git
+   cd churn-viewer
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   npm install
+   npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
